@@ -10,3 +10,9 @@
  */
 
 export const DEFAULT_LOCALE = 'en';
+
+export const LEAVE_ROUTE = 'yasserhennawi/App/LEAVE_ROUTE';
+export const ROUTE_READY = 'yasserhennawi/App/ROUTE_READY';
+export const START_PAGE_ANIMATION = 'yasserhennawi/App/START_PAGE_ANIMATION';
+export const CHANGE_GATE_STATE = 'yasserhennawi/App/CHANGE_GATE_STATE';
+// export const APP_LOADED = 'yasserhennawi/App/APP_LOADED';

@@ -26,7 +26,6 @@ const prettyHost = customHost || 'localhost';
 
 var port = argv.port || process.env.PORT || 3000;
 if (isDev) { port = 4000 }
-// const port = 4000;
 
 // Start your app.
 app.listen(port, host, (err) => {
