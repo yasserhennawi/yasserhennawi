@@ -14,7 +14,7 @@ export default function Avatar({onClick, ...props}) {
       	<g>
       		<g id="XMLID_1_">
       			<g>
-      				<rect x="388.8" y="176.5" width="9.8" height="9.8"/>
+      				<rect x="388.8" y="176.5" width="10" height="9.8"/>
       				<rect x="388.8" y="166.7" width="9.8" height="9.8"/>
       				<rect x="388.8" y="156.9" width="9.8" height="9.8"/>
       				<rect x="388.8" y="147.1" width="9.8" height="9.8"/>
@@ -929,7 +929,5 @@ export default function Avatar({onClick, ...props}) {
       	</g>
       </g>
     </svg>
-
-
   );
 }
