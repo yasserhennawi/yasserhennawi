@@ -11,13 +11,11 @@ const Wrapper = styled.div`
   position: absolute;
   flex-direction: column;
   width: 100%;
-  background-color: #EEE;
   box-sizing: border-box;
   min-height: 100vh;
 `
 const Box = styled.div`
-  ${'' /* min-height: 100vh; */}
-  height: 100%;
+  min-height: 100vh;
   width: ${(props)=> props.width}%;
   position: absolute;
   background-color: ${(props) => props.bgColor};
@@ -26,20 +24,20 @@ const Box = styled.div`
     align-self: flex-end;
   }
 `
-const ContentWrapper = styled.div`
-  box-sizing: border-box;
-  min-height: 100vh;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-  width: 100%;
-  overflow-x: hidden;
-  background-color: ${(props) => props.bgColor};
-  & * {
-    z-index: 999;
-    opacity: ${(props)=> props.opacity};
-  }
-`
+// const ContentWrapper = styled.div`
+//   box-sizing: border-box;
+//   min-height: 100vh;
+//   justify-content: center;
+//   align-items: center;
+//   font-size: 40px;
+//   width: 100%;
+//   overflow-x: hidden;
+//   background-color: ${(props) => props.bgColor};
+//   & * {
+//     z-index: 999;
+//     opacity: ${(props)=> props.opacity};
+//   }
+// `
 const colors = [
   '#212121',
   '#212121',

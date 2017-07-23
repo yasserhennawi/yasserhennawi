@@ -35,11 +35,45 @@ export default function createRoutes(store) {
       },
     },
     {
-      path: '/showcase',
-      name: 'showcase',
+      path: '/aboutme',
+      name: 'aboutme',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
-          import('containers/ShowcasePage'),
+          import('containers/AboutMePage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    },
+    {
+      path: '/work',
+      name: 'work',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/WorkPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/ContactPage'),
         ]);
 
         const renderRoute = loadModule(cb);

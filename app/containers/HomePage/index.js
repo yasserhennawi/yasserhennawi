@@ -1,54 +1,43 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
 import { connect } from 'react-redux'
 import { requestToLeaveRoute, changeGateState } from '../App/actions'
 import styled from 'styled-components';
 import InfoCard from '../../components/InfoCard'
+import BoxyWallpaper from '../../components/BoxyWallpaper'
 import Avatar from '../../components/icons/Avatar';
-
-const bgColors = [
-  '#212121',
-  '#CCC'
-]
+import BackgroundImage from 'static/homeBackground.png';
 
 const Wrapper = styled.div`
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  padding: 20px;
+  &:after {
+    content: "";
+    background: url(${BackgroundImage}) no-repeat center/cover;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+}
 `
-const Wallpaper = styled.div`
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-`
-const WallpaperBox = styled.div`
-  position: absolute;
-  width: 50vw;
-  height: 50vh;
-  background-color: ${props => props.backgroundColor};
-  box-sizing: content-box;
-  &:nth-child(1) {
-    top:  0%;
-    left:  0%;
+const bgColors = [
+  '#212121',
+  '#CCC'
+]
 
-  }
-  &:nth-child(2) {
-    top: 50%;
-    left:  0%;
-  }
-  &:nth-child(3) {
-    top:  0%;
-    left: 50%;
-  }
-  &:nth-child(4) {
-    top: 50%;
-    left: 50%;
-  }
-`
-const InfoCardWrapper = styled(InfoCard)`
-`
+
+const buttons = [
+  { title: 'Work', route: '/work'},
+  { title: 'Contact', route: '/contact'},
+  { title: 'About me', route: '/aboutme'}
+]
 
 class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
@@ -66,16 +55,15 @@ class HomePage extends React.PureComponent { // eslint-disable-line react/prefer
   render() {
     return (
       <Wrapper>
-        <Wallpaper>
-          <WallpaperBox backgroundColor={bgColors[0]}/>
-          <WallpaperBox backgroundColor={bgColors[1]}/>
-          <WallpaperBox backgroundColor={bgColors[1]}/>
-          <WallpaperBox backgroundColor={bgColors[0]}/>
-        </Wallpaper>
-        <InfoCardWrapper
-          name="Yasser Hennawi"
-          title="Front-End Developer"
-          onShowcaseClick={() => this.navigateTo('/showcase')}/>
+        <InfoCard
+          name='Yasser Hennawi'
+          title='UX/UI Front-End Developer'
+          summary='Providing high-quality and fully responsive front-end solutions, Specialized in React and Redux SPAs.'
+          // avatar={<Avatar/>}
+          image='https://t3.ftcdn.net/jpg/01/04/10/10/240_F_104101070_wbEDt3CmlzqnPbdmOlVCL7Q7yu9mCduz.jpg'
+          avatarSize='150px'
+          buttons={buttons}
+        />
       </Wrapper>
     );
   }

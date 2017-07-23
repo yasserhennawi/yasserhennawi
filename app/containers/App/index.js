@@ -6,12 +6,14 @@ import { push } from 'react-router-redux';
 import styled from 'styled-components'
 import selectors from './selectors';
 
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
-
 const Wrapper = styled.div`
+  ${'' /* & > div {
+    & > * {
+      z-index: 1
+    }
+  } */}
 `;
-
+const OuterWrapper = styled.div``
 class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
   componentWillReceiveProps(nextProps){
@@ -27,12 +29,12 @@ class App extends React.PureComponent { // eslint-disable-line react/prefer-stat
 
   render() {
     return (
-    <MuiThemeProvider>
-      <Wrapper>
+      <OuterWrapper>
         <GateAnimation />
-        {React.Children.toArray(this.props.children)}
-      </Wrapper>
-    </MuiThemeProvider>
+        <Wrapper>
+          {React.Children.toArray(this.props.children)}
+        </Wrapper>
+      </OuterWrapper>
     );
   }
 }
