@@ -45,6 +45,8 @@ class GateAnimation extends React.Component {
     const {
       children,
       gateStatus,
+      isRouteReady,
+      routeToLoad,
     } = this.props;
 
     return (
@@ -61,6 +63,11 @@ class GateAnimation extends React.Component {
         ]}}
       >
         { styles => {
+          if(! gateStatus && styles[0].width == 50 && !this.props.isRouteReady && this.props.routeToLoad) {
+            setTimeout(() => {
+              this.props.routeIsReady();
+            }, 1);
+          }
           return (
             <Wrapper>
               <Box bgColor={colors[0]} width={styles[0].width}/>
@@ -75,8 +82,10 @@ class GateAnimation extends React.Component {
   }
 }
 
-const mapStateToProps = {};
+const mapStateToProps = selector();
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  routeIsReady,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(GateAnimation);

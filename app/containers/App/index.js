@@ -1,19 +1,27 @@
-/**
- *
- * App.react.js
- *
- * This component is the skeleton around the actual pages, and should only
- * contain code that should be seen on all pages. (e.g. navigation bar)
- *
- * NOTE: while this component should technically be a stateless functional
- * component (SFC), hot reloading does not currently support SFCs. If hot
- * reloading is not a necessity for you then you can refactor it and remove
- * the linting exception.
- */
-
+import GateAnimation from '../../components/GateAnimation'
 import React from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+import styled from 'styled-components'
+import selectors from './selectors';
 
-export default class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+const Wrapper = styled.div`
+  ${'' /* & > div {
+    & > * {
+      z-index: 1
+    }
+  } */}
+`;
+const OuterWrapper = styled.div``
+class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+
+  componentWillReceiveProps(nextProps){
+    if(nextProps.routeToLoad
+      && nextProps.routeToLoad !== nextProps.location.pathname
+      && nextProps.isRouteReady)
+      this.props.push(nextProps.routeToLoad)
+  }
 
   static propTypes = {
     children: React.PropTypes.node,
@@ -21,9 +29,17 @@ export default class App extends React.PureComponent { // eslint-disable-line re
 
   render() {
     return (
-      <div>
-        {React.Children.toArray(this.props.children)}
-      </div>
+        <Wrapper>
+          <GateAnimation>
+            {React.Children.toArray(this.props.children)}
+          </GateAnimation>
+        </Wrapper>
     );
   }
 }
+
+const mapStateToProps = selectors();
+
+const mapDispatchToProps = { push };
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
