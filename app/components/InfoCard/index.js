@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Avatar from 'components/icons/Avatar';
 import CircularImage from 'components/Utils/CircularImage';
 import Button from 'components/Utils/Button';
 import { connect } from 'react-redux';
@@ -11,11 +10,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
-  z-index: 1;
   max-width: 340px;
-  & > * {
-    font-weight: normal
-  }
 `
 const Name = styled.h2`
   color: rgba(0,0,0,0.75);
@@ -31,8 +26,9 @@ const ButtonsContainer = styled.div`
   flex-wrap: wrap;
 `
 const StyledButton = styled(Button)`
-  margin: 10px 10px 0 0;
-  padding: 6px 12px;
+  margin: 10px 15px 0 0;
+  padding: 5px 10px;
+  font-size: 14px;
 `
 
 class InfoCard extends React.PureComponent {

@@ -24,20 +24,15 @@ const Box = styled.div`
     align-self: flex-end;
   }
 `
-// const ContentWrapper = styled.div`
-//   box-sizing: border-box;
-//   min-height: 100vh;
-//   justify-content: center;
-//   align-items: center;
-//   font-size: 40px;
-//   width: 100%;
-//   overflow-x: hidden;
-//   background-color: ${(props) => props.bgColor};
-//   & * {
-//     z-index: 999;
-//     opacity: ${(props)=> props.opacity};
-//   }
-// `
+const ContentWrapper = styled.div`
+  box-sizing: border-box;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  width: 100%;
+  overflow-x: hidden;
+`
 const colors = [
   '#212121',
   '#212121',
@@ -81,9 +76,9 @@ class GateAnimation extends React.Component {
             <Wrapper>
               <Box bgColor={colors[0]} width={styles[0].width}/>
               <Box bgColor={colors[1]} width={styles[1].width}/>
-              {/* <ContentWrapper bgColor={colors[2]} opacity={styles[2].opacity}>
+              <ContentWrapper bgColor={colors[2]} opacity={styles[2].opacity}>
                 {children}
-              </ContentWrapper> */}
+              </ContentWrapper>
             </Wrapper>
           )}}
       </StaggeredMotion>

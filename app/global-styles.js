@@ -11,8 +11,9 @@ injectGlobal`
   h1, h2, h3, h4, h5, h6, p, a, hr, ul, li, pre {
     padding: 0px;
     margin: 0px;
-    font-weight: lighter;
-    font-family: lato
+    font-weight: normal;
+    font-family: 'Roboto';
+    color: rgba(0,0,0,0.87);
     line-height: 1.5;
   }
   h1 {
@@ -31,7 +32,7 @@ injectGlobal`
     font-size: 18px;
     ${'' /* line-height: 18px; */}
   }
-  h5 {
+  h5, p {
     font-size: 14px;
     ${'' /* line-height: 14px; */}
   }

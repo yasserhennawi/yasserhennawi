@@ -29,12 +29,11 @@ class App extends React.PureComponent { // eslint-disable-line react/prefer-stat
 
   render() {
     return (
-      <OuterWrapper>
-        <GateAnimation />
         <Wrapper>
-          {React.Children.toArray(this.props.children)}
+          <GateAnimation>
+            {React.Children.toArray(this.props.children)}
+          </GateAnimation>
         </Wrapper>
-      </OuterWrapper>
     );
   }
 }

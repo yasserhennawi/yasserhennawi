@@ -5,7 +5,9 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
-  z-index: 1;
+  & > * {
+    z-index: 1;
+  }
 `
 
 export default function PageContainer({children}){

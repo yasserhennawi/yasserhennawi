@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import InfoCard from '../../components/InfoCard'
 import BoxyWallpaper from '../../components/BoxyWallpaper'
 import Avatar from '../../components/icons/Avatar';
-import BackgroundImage from 'static/homeBackground.png';
+import backgroundImage from 'static/homeBackground.png';
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   padding: 20px;
   &:after {
     content: "";
-    background: url(${BackgroundImage}) no-repeat center/cover;
+    background: url(${backgroundImage}) no-repeat center/cover;
     opacity: 0.5;
     top: 0;
     left: 0;
@@ -34,7 +34,7 @@ const bgColors = [
 
 
 const buttons = [
-  { title: 'Work', route: '/work'},
+  { title: 'Projects', route: '/work'},
   { title: 'Contact', route: '/contact'},
   { title: 'About me', route: '/aboutme'}
 ]
