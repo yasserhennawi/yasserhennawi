@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const gradientColor = `rgba(0,0,0,0.9), rgba(0,0,0,0.5), rgba(0,0,0,0.1)`
+const gradientColor = `rgba(255,255,255,1), rgba(255,255,255,0.5), rgba(255,255,255,0.25), rgba(255,255,255,0)`
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
@@ -9,10 +9,11 @@ const Wrapper = styled.div`
   box-sizing: border-box;
   background-color: ${ props => props.bgColor };
   width: ${ props => props.width};
+  height: ${ props => props.width};
+  border-radius: 100%;
 `
 const LogoLayer = styled.div`
   width: 100%;
-  padding: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,12 +24,14 @@ const NameLayer = styled.h5`
   align-items: center;
   width: ${ props => props.width};
   height: ${ props => props.width};
-  color: #EEE;
-  background-color: rgba(0,0,0,0.3); // Safety callback style 
+  box-sizing: border-box;
+  color: rgba(0,0,0,0.75);
+  font-weight: 500;
   background: -webkit-radial-gradient( ${gradientColor} );
   background: -o-radial-gradient( ${gradientColor} );
   background: -moz-radial-gradient( ${gradientColor} );
   background: radial-gradient( ${gradientColor} );
+  border-radius: 100%;
   transition: all 0.5s ease;
   opacity: 0;
   &:hover {

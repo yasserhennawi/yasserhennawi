@@ -40,5 +40,4 @@ injectGlobal`
     font-size: 12px;
     ${'' /* line-height: 12px; */}
   }
-
 `;

@@ -8,7 +8,7 @@ const Button = styled.button`
   transition: all 0.5s ease;
   &:hover {
     background: ${(props) => props.color};
-    color: ${(props) => props.activeColor || props.inverseColor} 
+    color: ${(props) => props.activeColor || props.inverseColor}
     border: 1px solid rgba(0,0,0,0);
   }
   outline: none;

@@ -5,21 +5,22 @@ import Tool from '../Tool';
 import Avatar from 'components/icons/Avatar';
 
 const StyledTool = styled(Tool)`
-  margin: 10px 10px 0 0;
+  margin: 10px 20px 0 0;
 `
 const ToolsWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `
-const getTools = (tools) =>
-  tools.map( (tool, index) => (
-    <Tool key={index} name={tool.name} image={tool.image}/>
-  ))
-const ToolsSection = ({ tool, ...props }) => (
+const getTools = (tools, width) =>
+  <ToolsWrapper>
+    { tools.map( (tool, index) =>
+      <StyledTool key={index} width={width} name={tool.name} logo={tool.logo}/>
+    )}
+  </ToolsWrapper>
+
+const ToolsSection = ({ tools, width, ...props }) => (
   <WorkSection title="Tools">
-    <ToolsWrapper>
-      <StyledTool bgColor='#369' width="75px" name='React' logo={<Avatar/>}/>
-      {/* {getTools(tools)} */}
-    </ToolsWrapper>
+    {getTools(tools, width)}
   </WorkSection>
 )
 

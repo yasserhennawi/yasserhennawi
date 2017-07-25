@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import WorkSection from '../WorkSection';
+import Check from '../../icons/Check'
 
-const iconUrl = 'https://cdn2.iconfinder.com/data/icons/bullet-points/64/Bulletpoint_Bullet_Listicon_Shape_Bulletfont_Glyph_Typography_Bullet_Point_Customshape_Wingding_Custom_Star_Four_Square_Decoretive-512.png';
 const Role = styled.h5`
   display: flex;
   margin-bottom: 5px;
@@ -15,17 +15,21 @@ const RolesWrapper = styled.div`
     margin-bottom: 0;
   }
 `
-const Icon = styled.div`
-  background-image: url(${iconUrl});
-  background-size: contain;
+const CheckIconWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 15px;
   height: 15px;
-  margin-right: 10px;
+  margin-right: 8px;
 `
 const getRoles = (roles) =>
   roles.map( (role, index) => (
     <Role key={index}>
-      <Icon/>{role}
+      <CheckIconWrapper>
+        <Check />
+      </CheckIconWrapper>
+      {role}
     </Role>
   ))
 const RolesSection = ({ roles, ...props }) => (

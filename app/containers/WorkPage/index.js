@@ -9,9 +9,12 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 20px;
 `
-
+const StyledButton = styled(Button)`
+  margin: 10px 15px 0 0;
+  padding: 5px 10px;
+  font-size: 14px;
+`
 class Work extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
   componentDidMount(props) {
@@ -28,16 +31,18 @@ class Work extends React.PureComponent { // eslint-disable-line react/prefer-sta
   render() {
     return (
       <Wrapper>
-        <ProjectGridItem/>
-        <Button
-          secondary
-          label="Go to Homepage"
-          onClick={ () => {this.navigateTo('/')} }
+        <ProjectGridItem
+          // secondary
         >
-          <h4>
+          <StyledButton
+            // secondary
+            label="Go to Homepage"
+            onClick={ () => {this.navigateTo('/')} }
+          >
+
             Go to Homepage
-          </h4>
-        </Button>
+          </StyledButton>
+        </ProjectGridItem>
       </Wrapper>
     );
   }
