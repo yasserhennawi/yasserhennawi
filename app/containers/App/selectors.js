@@ -1,5 +1,8 @@
+import { createSelector } from 'reselect';
+import { selectRouteToLoad, selectIsRouteReady } from '../../components/GateAnimation/selectors'
+
 // makeSelectLocationState expects a plain JS object for the routing state
-const makeSelectLocationState = () => {
+export const makeSelectLocationState = () => {
   let prevRoutingState;
   let prevRoutingStateJS;
 
@@ -15,6 +18,11 @@ const makeSelectLocationState = () => {
   };
 };
 
-export {
-  makeSelectLocationState,
-};
+export default () => createSelector(
+  selectRouteToLoad(),
+  selectIsRouteReady(),
+  (routeToLoad, isRouteReady) => ({
+    routeToLoad,
+    isRouteReady,
+  })
+);
