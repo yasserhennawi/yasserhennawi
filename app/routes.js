@@ -52,6 +52,23 @@ export default function createRoutes(store) {
       },
     },
     {
+      path: '/contact',
+      name: 'contact',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/ContactPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    },
+    {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {
