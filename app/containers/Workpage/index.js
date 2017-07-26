@@ -2,20 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { requestToLeaveRoute, changeGateState } from '../App/actions';
 import ProjectGridItem from '../../components/Work/ProjectGridItem'
-import Button from 'components/Utils/Button';
+import ProjectGrid from '../../components/Work/ProjectGrid'
 import styled from 'styled-components';
+import backgroundImage from 'assets/homeBackground.png';
+import ReactIcon from 'components/icons/React';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `
-const StyledButton = styled(Button)`
-  margin: 10px 15px 0 0;
-  padding: 5px 10px;
-  font-size: 14px;
-`
-class Work extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
+class Work extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentDidMount(props) {
     setTimeout(()=>{
       this.props.changeGateState();
@@ -30,18 +27,7 @@ class Work extends React.PureComponent { // eslint-disable-line react/prefer-sta
   render() {
     return (
       <Wrapper>
-        <ProjectGridItem
-          // secondary
-        >
-          <StyledButton
-            // secondary
-            label="Go to Homepage"
-            onClick={ () => {this.navigateTo('/')} }
-          >
-
-            Go to Homepage
-          </StyledButton>
-        </ProjectGridItem>
+        <ProjectGrid onHomepageClick={() => this.navigateTo('/')} projects={projects} toolsWidth='30px'/>
       </Wrapper>
     );
   }
@@ -52,4 +38,47 @@ const mapDispatchToProps = {
   changeGateState,
 }
 
-export default connect(null, mapDispatchToProps)(Work)
+export default connect(null, mapDispatchToProps)(Work);
+const paras = [
+  "When an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  "When an unknown printer took a galley of type and scrambled it to make a type specimen book, when an unknown printer took a galley of type and ",
+  "lorem Ipsum standard dummy text ever since the 1500s"
+]
+const roles = [
+  "lorem Ipsum is simply dummy textk.",
+  "lorem Ipsum is simply dummy textk.",
+  "lorem Ipsum is simply dummy text00s"
+]
+const tools = [
+  {
+    name: 'React',
+    logo: <ReactIcon/>
+  },
+  {
+    name: 'PostCSS',
+    logo: <ReactIcon/>
+  },
+  {
+    name: 'React',
+    logo: <ReactIcon/>
+  },
+]
+const projects = [
+  {
+    paragraphes: paras,
+    roles: roles,
+    tools: tools,
+    image: backgroundImage,
+  },  {
+    paragraphes: paras,
+    roles: roles,
+    tools: tools,
+    image: backgroundImage,
+  },
+  {
+    paragraphes: paras,
+    roles: roles,
+    tools: tools,
+    image: backgroundImage,
+  },
+]

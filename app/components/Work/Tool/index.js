@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const gradientColor = `rgba(255,255,255,1), rgba(255,255,255,0.5), rgba(255,255,255,0.25), rgba(255,255,255,0)`
+const gradientColor = `rgba(33,33,33,1), rgba(33,33,33,0.8), rgba(33,33,33,0.5), rgba(33,33,33,0)`
+const secondaryGradientColor = `rgba(255,255,255,1), rgba(255,255,255,0.5), rgba(255,255,255,0.25), rgba(255,255,255,0)`
 const Wrapper = styled.div`
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -14,11 +16,15 @@ const Wrapper = styled.div`
 `
 const LogoLayer = styled.div`
   width: 100%;
+  width: ${ props => props.width};
+  height: ${ props => props.width};
   display: flex;
   justify-content: center;
+  background-image: url(${props => props.logoImage});
   align-items: center;
 `
 const NameLayer = styled.h5`
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,22 +33,21 @@ const NameLayer = styled.h5`
   box-sizing: border-box;
   color: rgba(0,0,0,0.75);
   font-weight: 500;
-  background: -webkit-radial-gradient( ${gradientColor} );
-  background: -o-radial-gradient( ${gradientColor} );
-  background: -moz-radial-gradient( ${gradientColor} );
-  background: radial-gradient( ${gradientColor} );
+  background: -webkit-radial-gradient( ${props => props.secondary ? secondaryGradientColor : gradientColor} );
+  background: -o-radial-gradient( ${props => props.secondary ? secondaryGradientColor : gradientColor} );
+  background: -moz-radial-gradient( ${props => props.secondary ? secondaryGradientColor : gradientColor} );
+  background: radial-gradient( ${props => props.secondary ? secondaryGradientColor : gradientColor} );
   border-radius: 100%;
   transition: all 0.5s ease;
   opacity: 0;
   &:hover {
     opacity: 1;
   }
-  position: absolute;
 `
-const Tool = ({ bgColor, width, logo, name, ...props }) => (
+const Tool = ({ bgColor, width, logo, logoImage, name, secondary, ...props }) => (
   <Wrapper bgColor={bgColor} width={width} { ...props } >
-    <NameLayer width={width}>{name}</NameLayer>
-    <LogoLayer>{logo}</LogoLayer>
+    <NameLayer secondary={secondary} width={width}>{name}</NameLayer>
+    <LogoLayer logoImage={logoImage} width={width}>{logo}</LogoLayer>
   </Wrapper>
 )
 export default Tool;

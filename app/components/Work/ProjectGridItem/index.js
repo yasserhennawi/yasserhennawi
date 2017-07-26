@@ -1,17 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import backgroundImage from 'assets/homeBackground.png';
 import BriefSection from '../BriefSection';
 import RolesSection from '../RolesSection';
 import ToolsSection from '../ToolsSection';
-import ReactIcon from 'components/icons/React';
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  flex-direction: ${(props) => props.secondary ? `row-reverse` : `row`};
   justify-content: space-between;
+  align-items: center;
   background-color: ${(props)=> props.bgColor};
-  padding: 20px;
+  @media (max-width: 760px){
+    flex-direction: column;
+  }
+  padding: 40px;
 `
 const BackgroundImage = styled.img`
   width: 100%;
@@ -19,6 +22,10 @@ const BackgroundImage = styled.img`
 `
 const BackgroundImageWrapper = styled.div`
   width: 50%;
+  @media (max-width: 760px){
+    width: 100%;
+    margin-bottom: 20px;
+  }
 `
 const ContentWrapper = styled.div`
   & * {
@@ -30,82 +37,32 @@ const ContentWrapper = styled.div`
   & > * {
     margin-bottom: 10px;
   }
-`
-const ProjectGridItem = ({ secondary, ...props }) => {
-  if (secondary) {
-    return (
-      <Wrapper bgColor='#FFF'>
-        <BackgroundImageWrapper>
-          <BackgroundImage  src={backgroundImage}/>
-        </BackgroundImageWrapper>
-        <ContentWrapper secondary>
-          <BriefSection paragraphes={paras}/>
-          <RolesSection roles={roles}/>
-          <ToolsSection tools={tools} width='40px'/>
-          {props.children}
-        </ContentWrapper>
-      </Wrapper>
-    )
+  @media (max-width: 760px){
+    width: 100%;
   }
+`
+const ChildrenWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px;
+`
+const ProjectGridItem = ({ children, width, paragraphes, roles, tools, secondary, image, ...props }) => {
   return (
-    <Wrapper bgColor='#212121'>
+    <Wrapper secondary={secondary} bgColor={secondary ? '#FFF' : '#212121'}>
       <BackgroundImageWrapper>
-        <BackgroundImage src={backgroundImage}/>
+        <BackgroundImage src={image}/>
       </BackgroundImageWrapper>
-      <ContentWrapper>
-        <BriefSection paragraphes={paras}/>
+      <ContentWrapper secondary={secondary}>
+        <BriefSection paragraphes={paragraphes}/>
         <RolesSection roles={roles}/>
-        <ToolsSection tools={tools} width='40px'/>
-        {props.children}
+        <ToolsSection secondary={secondary} tools={tools} width={width}/>
       </ContentWrapper>
+      { children ? <ChildrenWrapper>
+        {children}
+      </ChildrenWrapper>
+      : null }
     </Wrapper>
   )
-
 }
-
-
 export default ProjectGridItem;
-const paras = [
-  "When an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-  "When an unknown printer took a galley of type and scrambled it to make a type specimen book, when an unknown printer took a galley of type and ",
-  "lorem Ipsum standard dummy text ever since the 1500s"
-]
-const roles = [
-  "lorem Ipsum is simply dummy textk.",
-  "lorem Ipsum is simply dummy textk.",
-  "lorem Ipsum is simply dummy text00s"
-]
-const tools = [
-  {
-    name: 'React',
-    logo: <ReactIcon/>
-  },
-  {
-    name: 'PostCSS',
-    logo: <ReactIcon/>
-  },
-  {
-    name: 'React',
-    logo: <ReactIcon/>
-  },
-  {
-    name: 'React',
-    logo: <ReactIcon/>
-  },
-  {
-    name: 'React',
-    logo: <ReactIcon/>
-  },
-  {
-    name: 'React',
-    logo: <ReactIcon/>
-  },
-  {
-    name: 'React',
-    logo: <ReactIcon/>
-  },
-  {
-    name: 'React',
-    logo: <ReactIcon/>
-  },
-]
