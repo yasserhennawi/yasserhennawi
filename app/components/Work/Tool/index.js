@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'utils/styled-components';
 
 const gradientColor = `rgba(33,33,33,1), rgba(33,33,33,0.8), rgba(33,33,33,0.5), rgba(33,33,33,0)`
 const secondaryGradientColor = `rgba(255,255,255,1), rgba(255,255,255,0.5), rgba(255,255,255,0.25), rgba(255,255,255,0)`

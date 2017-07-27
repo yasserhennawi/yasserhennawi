@@ -3,7 +3,7 @@ import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
-import styled from 'styled-components'
+import styled from 'utils/styled-components'
 import selectors from './selectors';
 
 const Wrapper = styled.div`

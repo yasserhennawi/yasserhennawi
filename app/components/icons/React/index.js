@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'utils/styled-components';
 
 const StyledSVG = styled.svg`
    fill: #FFF;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { requestToLeaveRoute, changeGateState } from '../App/actions'
-import styled from 'styled-components';
+import styled from 'utils/styled-components';
 import InfoCard from '../../components/InfoCard'
 import backgroundImage from 'assets/homeBackground.png';
 

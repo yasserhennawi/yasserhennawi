@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'utils/styled-components';
 import ProjectGridItem from 'components/Work/ProjectGridItem';
 import { isOdd } from 'utils/helper';
 import Button from 'components/Utils/Button';
