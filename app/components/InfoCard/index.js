@@ -1,16 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from 'utils/styled-components';
 import CircularImage from 'components/Utils/CircularImage';
 import Button from 'components/Utils/Button';
 import { connect } from 'react-redux';
 import { requestToLeaveRoute, changeGateState } from '../../containers/App/actions'
 
+const gradientColor = `rgba(33,33,33,1), rgba(33,33,33,0.8), rgba(33,33,33,0.5), rgba(33,33,33,0)`
+const secondaryGradientColor = `farthest-side, rgba(255,255,255,1), rgba(255,255,255,0.8), rgba(255,255,255,0.6), rgba(255,255,255,0.3)`
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 30px;
   max-width: 340px;
+  border-radius: 20px;
+  background-color: rgba(255,255,255,0.3); 
+  background: -webkit-radial-gradient(${secondaryGradientColor});
+  background: -o-radial-gradient(${secondaryGradientColor});
+  background: -moz-radial-gradient(${secondaryGradientColor});
+  background: radial-gradient(${secondaryGradientColor});
+  box-shadow: 0px 0px 20px rgba(255,255,255,0.3);
 `
 const Name = styled.h2`
   color: rgba(0,0,0,0.75);
