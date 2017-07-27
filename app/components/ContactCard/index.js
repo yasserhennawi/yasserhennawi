@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'utils/styled-components';
 import backgroundImage from 'assets/contactBackground.png';
 import Button from 'components/Utils/Button';
 import ContactItem from '../ContactItem';
@@ -12,7 +12,6 @@ const Wrapper = styled.div`
   max-height: 100vh;
   overflow: hidden;
   padding: 20px;
-  max-width: 340px;
 `
 const StyledButton = styled(Button)`
   padding: 10px 10px;
@@ -37,6 +36,7 @@ const getContactItems = (items) => (
         url={item.url}
         logo={item.logo}
         bgColor={item.bgColor}
+        isClickable={item.isClickable}
       />
     ))}
   </ContactItemWrapper>
@@ -47,11 +47,6 @@ const ContactCard = ({ onHomepageClick, contactItems, ...props }) => (
         Get in touch!
       </Title>
       { contactItems ? getContactItems(contactItems) : null }
-      {/* DevButton: to be removed */}
-      <StyledButton
-        onClick={onHomepageClick}>
-        Homepage
-      </StyledButton>
     </Wrapper>
 )
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { requestToLeaveRoute, changeGateState } from '../App/actions';
 import Button from 'components/Utils/Button';
-import styled from 'styled-components';
+import styled from 'utils/styled-components';
 import Facebook from 'components/icons/Facebook';
 import Phone from 'components/icons/Phone';
 import Twitter from 'components/icons/Twitter';
@@ -10,7 +10,8 @@ import Linkedin from 'components/icons/Linkedin';
 import Github from 'components/icons/Github';
 import Email from 'components/icons/Email';
 import backgroundImage from 'assets/contactBackground.png';
-import ContactCard from '../../components/ContactCard'
+import ContactCard from 'components/ContactCard'
+import BackButton from 'components/Main/BackButton'
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -22,7 +23,6 @@ const Wrapper = styled.div`
   &:after {
     content: "";
     background: url(${backgroundImage}) no-repeat 15%/cover;
-    ${'' /* opacity: 0.25; */}
     top: 0;
     left: 0;
     bottom: 0;
@@ -49,7 +49,8 @@ class Contact extends React.PureComponent { // eslint-disable-line react/prefer-
   render() {
     return (
       <Wrapper>
-        <ContactCard contactItems={contactItems} onHomepageClick={() => this.navigateTo('/')}/>
+        <BackButton secondary onClick={() => this.navigateTo('/')} />
+        <ContactCard contactItems={contactItems}/>
       </Wrapper>
     );
   }

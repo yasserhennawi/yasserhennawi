@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'utils/styled-components';
 import media from 'utils/media';
 
 const Wrapper = styled.div`
@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  box-sizing: border-box;
   &:hover {
     & > .textWrapper {
       max-width: 100%;
@@ -19,7 +20,7 @@ const Wrapper = styled.div`
   ${media.tablet`
     &:hover {
       & > .textWrapper {
-        max-width: 0
+        max-width: 1%;
         padding: 5px 0;
       }
     }
@@ -44,7 +45,6 @@ const LogoWrapper = styled.div`
   border-radius: 100%;
 `
 const TextWrapper = styled.h4`
-  max-width: 100%;
   margin-left: -20px;
   transition: all 0.75s ease;
   border-radius: 0 100px 100px 0;
@@ -52,7 +52,7 @@ const TextWrapper = styled.h4`
   overflow: hidden;
   width: auto
   padding: 5px 0;
-  max-width: 0;
+  max-width: 1%;
   box-sizing: border-box;
   background-color: ${ props => props.textBgColor }
 `
@@ -65,10 +65,12 @@ const ContactItem = ({ isClickable, url, logo, bgColor, ...props }) => (
     <TextWrapper className='textWrapper' textBgColor={bgColor}>
       {url}
     </TextWrapper>
-    <LogoWrapper logoBgColor={bgColor}>
+    <LogoWrapper className='logoWrapper' logoBgColor={bgColor}>
       {logo}
     </LogoWrapper>
   </Wrapper>
 )
-console.log(media.sm);
+ContactItem.defaultProps = {
+  isClickable: true,
+}
 export default ContactItem;
