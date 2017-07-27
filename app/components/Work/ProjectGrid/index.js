@@ -23,13 +23,6 @@ const getProjects = (projects, toolsWidth, onHomepageClick) =>
       width={toolsWidth}
       image={project.image}
     >
-      {projects.length === index + 1 ?
-        <StyledButton
-          onClick={onHomepageClick}
-          secondary={!isOdd(index)}>
-          Homepage
-        </StyledButton>
-      : null }
     </ProjectGridItem>
   )
 

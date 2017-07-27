@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'utils/styled-components';
 import BriefSection from '../BriefSection';
 import RolesSection from '../RolesSection';
 import ToolsSection from '../ToolsSection';
@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   flex-direction: ${(props) => props.secondary ? `row-reverse` : `row`};
   justify-content: space-between;
   align-items: center;
-  background-color: ${(props)=> props.bgColor};
+  ${'' /* background-color: ${(props)=> props.bgColor}; */}
   @media (max-width: 760px){
     flex-direction: column;
   }
@@ -25,7 +25,9 @@ const BackgroundImageWrapper = styled.div`
   @media (max-width: 760px){
     width: 100%;
     margin-bottom: 20px;
-  }
+  };
+  filter: drop-shadow(-3px 3px 3px rgba(0,0,0,0.5));
+        ${'' /* drop-shadow(-1px -1px 0 black); */}
 `
 const ContentWrapper = styled.div`
   & * {
@@ -50,13 +52,13 @@ const ChildrenWrapper = styled.div`
 const ProjectGridItem = ({ children, width, paragraphes, roles, tools, secondary, image, ...props }) => {
   return (
     <Wrapper secondary={secondary} bgColor={secondary ? '#FFF' : '#212121'}>
-      <BackgroundImageWrapper>
+      <BackgroundImageWrapper secondary={true}>
         <BackgroundImage src={image}/>
       </BackgroundImageWrapper>
-      <ContentWrapper secondary={secondary}>
+      <ContentWrapper secondary>
         <BriefSection paragraphes={paragraphes}/>
         <RolesSection roles={roles}/>
-        <ToolsSection secondary={secondary} tools={tools} width={width}/>
+        <ToolsSection secondary tools={tools} width={width}/>
       </ContentWrapper>
       { children ? <ChildrenWrapper>
         {children}
