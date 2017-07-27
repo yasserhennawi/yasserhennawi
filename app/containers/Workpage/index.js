@@ -1,33 +1,35 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { requestToLeaveRoute, changeGateState } from '../App/actions';
-import ProjectGridItem from '../../components/Work/ProjectGridItem'
-import ProjectGrid from '../../components/Work/ProjectGrid'
-import styled from 'styled-components';
+import ProjectGridItem from '../../components/Work/ProjectGridItem';
+import ProjectGrid from '../../components/Work/ProjectGrid';
+import styled from 'utils/styled-components';
 import backgroundImage from 'assets/homeBackground.png';
+import GoCrushMock from 'assets/GoCrushMock.png';
 import ReactIcon from 'components/icons/React';
+import BackButton from 'components/Main/BackButton';
+import CloudAnimation from 'components/Main/CloudAnimation';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `
-
 class Work extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentDidMount(props) {
     setTimeout(()=>{
       this.props.changeGateState();
     }, 500)
   }
-
   navigateTo(route) {
     this.props.changeGateState();
     this.props.requestToLeaveRoute(route);
   }
-
   render() {
     return (
       <Wrapper>
-        <ProjectGrid onHomepageClick={() => this.navigateTo('/')} projects={projects} toolsWidth='30px'/>
+        <CloudAnimation/>
+        <BackButton onClick={() => this.navigateTo('/')} />
+        <ProjectGrid projects={projects} toolsWidth='50px'/>
       </Wrapper>
     );
   }
@@ -68,7 +70,7 @@ const projects = [
     paragraphes: paras,
     roles: roles,
     tools: tools,
-    image: backgroundImage,
+    image: GoCrushMock,
   },  {
     paragraphes: paras,
     roles: roles,
