@@ -19,7 +19,7 @@ const DesktopImage = styled.img`
   height: auto;
 `
 const MobileImage = styled.img`
-  margin-top: -50%;
+  margin-top: -25%;
   margin-left: 60%;
   width: 30%;
   height: auto;

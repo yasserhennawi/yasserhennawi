@@ -5,7 +5,10 @@ import ProjectGridItem from '../../components/Work/ProjectGridItem';
 import ProjectGrid from '../../components/Work/ProjectGrid';
 import styled from 'utils/styled-components';
 import backgroundImage from 'assets/homeBackground.png';
-import GoCrushMock from 'assets/GoCrushMock.png';
+import GoCrushDesktopMock from 'assets/gocrushDesktopMock.png';
+import GoCrushMobileMock from 'assets/gocrushMobileMock.png';
+import GoodsenseDesktopMock from 'assets/goodsenseDesktopMock.png';
+import GoodsenseMobileMock from 'assets/goodsenseMobileMock.png';
 import ReactIcon from 'components/icons/React';
 import BackButton from 'components/Main/BackButton';
 import CloudAnimation from 'components/Main/CloudAnimation';
@@ -70,17 +73,20 @@ const projects = [
     paragraphes: paras,
     roles: roles,
     tools: tools,
-    image: GoCrushMock,
+    desktopImage: GoCrushDesktopMock,
+    mobileImage: GoCrushMobileMock,
   },  {
     paragraphes: paras,
     roles: roles,
     tools: tools,
-    image: backgroundImage,
+    desktopImage: GoodsenseDesktopMock,
+    mobileImage: GoodsenseMobileMock,
   },
   {
     paragraphes: paras,
     roles: roles,
     tools: tools,
-    image: backgroundImage,
+    desktopImage: GoCrushDesktopMock,
+    mobileImage: GoCrushMobileMock,
   },
 ]
