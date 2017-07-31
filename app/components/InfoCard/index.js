@@ -13,9 +13,9 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 30px;
-  max-width: 340px;
+  max-width: 360px;
   border-radius: 20px;
-  background-color: rgba(255,255,255,0.3); 
+  background-color: rgba(255,255,255,0.3);
   background: -webkit-radial-gradient(${secondaryGradientColor});
   background: -o-radial-gradient(${secondaryGradientColor});
   background: -moz-radial-gradient(${secondaryGradientColor});
@@ -39,6 +39,10 @@ const StyledButton = styled(Button)`
   margin: 10px 15px 0 0;
   padding: 5px 10px;
   font-size: 14px;
+  flex-grow: 1;
+  &:last-child {
+    margin-right: 0;
+  }
 `
 
 class InfoCard extends React.PureComponent {

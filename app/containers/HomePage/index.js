@@ -30,11 +30,9 @@ const bgColors = [
   '#CCC'
 ]
 
-
 const buttons = [
   { title: 'Projects', route: '/work'},
   { title: 'Contact', route: '/contact'},
-  { title: 'About me', route: '/aboutme'}
 ]
 
 class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
