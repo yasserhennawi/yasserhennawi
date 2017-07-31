@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   flex-direction: row-reverse;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: ${props => props.isClickable ? `pointer` : `auto`};
   box-sizing: border-box;
   &:hover {
     & > .textWrapper {
@@ -18,11 +18,10 @@ const Wrapper = styled.div`
     }
   };
   ${media.tablet`
-    &:hover {
-      & > .textWrapper {
-        max-width: 1%;
-        padding: 5px 0;
-      }
+    & > .textWrapper {
+      max-width: 100%;
+      padding: 5px 10px;
+      padding-left: 30px;
     }
   `};
   & > * {
@@ -48,8 +47,9 @@ const TextWrapper = styled.h4`
   margin-left: -20px;
   transition: all 0.75s ease;
   border-radius: 0 100px 100px 0;
-  white-space: nowrap;
-  overflow: hidden;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
   width: auto
   padding: 5px 0;
   max-width: 1%;
@@ -61,7 +61,7 @@ const navigateTo = (url) => {
 }
 
 const ContactItem = ({ isClickable, url, logo, bgColor, ...props }) => (
-  <Wrapper onClick={ isClickable ? () => navigateTo(url) : null}>
+  <Wrapper isClickable={isClickable} onClick={ isClickable ? () => navigateTo(url) : null}>
     <TextWrapper className='textWrapper' textBgColor={bgColor}>
       {url}
     </TextWrapper>
