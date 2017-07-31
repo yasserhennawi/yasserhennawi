@@ -6,10 +6,10 @@ import SecondCloudSVG from 'components/icons/Cloud/secondCloud.svg';
 import ThirdCloudSVG from 'components/icons/Cloud/thirdCloud.svg';
 import ForthCloudSVG from 'components/icons/Cloud/forthCloud.svg';
 
-const row1Duration = '10s';
-const row2Duration = '14s';
-const row3Duration = '14s';
-const row4Duration = '16s';
+const row1Duration = '15s';
+const row2Duration = '20s';
+const row3Duration = '20s';
+const row4Duration = '23s';
 
 const transition = keyframes`
   0% {background-position-x: 0}
