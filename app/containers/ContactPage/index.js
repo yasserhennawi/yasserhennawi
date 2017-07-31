@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background-color: rgba(0,0,0,0.75);
+  background-color: rgba(0,0,0,0.85);
   &:after {
     content: "";
     background: url(${backgroundImage}) no-repeat 15%/cover;
