@@ -9,25 +9,30 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   flex-direction: ${(props) => props.secondary ? `row-reverse` : `row`};
   justify-content: space-between;
-  align-items: center;
-  ${'' /* background-color: ${(props)=> props.bgColor}; */}
   @media (max-width: 760px){
     flex-direction: column;
   }
   padding: 40px;
 `
-const BackgroundImage = styled.img`
+const DesktopImage = styled.img`
   width: 100%;
   height: auto;
 `
+const MobileImage = styled.img`
+  margin-top: -50%;
+  margin-left: 60%;
+  width: 30%;
+  height: auto;
+`
 const BackgroundImageWrapper = styled.div`
-  width: 50%;
+  width: 45%;
   @media (max-width: 760px){
     width: 100%;
     margin-bottom: 20px;
   };
-  filter: drop-shadow(-3px 3px 3px rgba(0,0,0,0.5));
-        ${'' /* drop-shadow(-1px -1px 0 black); */}
+  & > *{
+    filter: drop-shadow(-3px 3px 3px rgba(0,0,0,0.5))
+  }
 `
 const ContentWrapper = styled.div`
   & * {
@@ -49,11 +54,12 @@ const ChildrenWrapper = styled.div`
   width: 100%;
   margin-top: 30px;
 `
-const ProjectGridItem = ({ children, width, paragraphes, roles, tools, secondary, image, ...props }) => {
+const ProjectGridItem = ({ children, width, paragraphes, roles, tools, secondary, desktopImage, mobileImage, ...props }) => {
   return (
     <Wrapper secondary={secondary} bgColor={secondary ? '#FFF' : '#212121'}>
       <BackgroundImageWrapper secondary={true}>
-        <BackgroundImage src={image}/>
+        <DesktopImage src={desktopImage}/>
+        <MobileImage src={mobileImage}/>
       </BackgroundImageWrapper>
       <ContentWrapper secondary>
         <BriefSection paragraphes={paragraphes}/>

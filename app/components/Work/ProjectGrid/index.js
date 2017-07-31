@@ -16,12 +16,13 @@ const getProjects = (projects, toolsWidth, onHomepageClick) =>
   projects.map((project, index) =>
     <ProjectGridItem
       key={index}
-      secondary={!isOdd(index)}
+      secondary={isOdd(index)}
       paragraphes={project.paragraphes}
       roles={project.roles}
       tools={project.tools}
       width={toolsWidth}
-      image={project.image}
+      desktopImage={project.desktopImage}
+      mobileImage={project.mobileImage}
     >
     </ProjectGridItem>
   )
