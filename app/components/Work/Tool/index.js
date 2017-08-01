@@ -12,6 +12,7 @@ const Wrapper = styled.div`
   background-color: ${ props => props.bgColor };
   width: ${ props => props.width};
   height: ${ props => props.width};
+  padding: ${ props => props.padding };
   border-radius: 100%;
 `
 const LogoLayer = styled.div`
@@ -21,12 +22,15 @@ const LogoLayer = styled.div`
   display: flex;
   justify-content: center;
   background-image: url(${props => props.logoImage});
+  background-size: contain;
+  background-position: center;
   align-items: center;
 `
 const NameLayer = styled.h5`
   position: absolute;
   display: flex;
   justify-content: center;
+  text-align: center;
   align-items: center;
   width: ${ props => props.width};
   height: ${ props => props.width};
@@ -37,6 +41,7 @@ const NameLayer = styled.h5`
   background: -o-radial-gradient( ${props => props.secondary ? secondaryGradientColor : gradientColor} );
   background: -moz-radial-gradient( ${props => props.secondary ? secondaryGradientColor : gradientColor} );
   background: radial-gradient( ${props => props.secondary ? secondaryGradientColor : gradientColor} );
+  text-shadow: -2px -2px 4px #fff, 2px 2px 4px #fff;
   border-radius: 100%;
   transition: all 0.5s ease;
   opacity: 0;
@@ -44,8 +49,8 @@ const NameLayer = styled.h5`
     opacity: 1;
   }
 `
-const Tool = ({ bgColor, width, logo, logoImage, name, secondary, ...props }) => (
-  <Wrapper bgColor={bgColor} width={width} { ...props } >
+const Tool = ({ bgColor, width, padding, logo, logoImage, name, secondary, ...props }) => (
+  <Wrapper bgColor={bgColor} padding={padding} width={width} { ...props } >
     <NameLayer secondary={secondary} width={width}>{name}</NameLayer>
     <LogoLayer logoImage={logoImage} width={width}>{logo}</LogoLayer>
   </Wrapper>

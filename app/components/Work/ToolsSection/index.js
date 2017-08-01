@@ -13,7 +13,7 @@ const ToolsWrapper = styled.div`
 const getTools = (tools, width, secondary) =>
   <ToolsWrapper>
     { tools.map( (tool, index) =>
-      <StyledTool key={index} secondary={secondary} width={width} name={tool.name} logo={tool.logo}/>
+      <StyledTool key={index} padding={tool.padding} secondary={secondary} width={width} name={tool.name} logoImage={tool.logoImage} logo={tool.logo}/>
     )}
   </ToolsWrapper>
 

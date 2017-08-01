@@ -9,7 +9,9 @@ import GoCrushDesktopMock from 'assets/gocrushDesktopMock.png';
 import GoCrushMobileMock from 'assets/gocrushMobileMock.png';
 import GoodsenseDesktopMock from 'assets/goodsenseDesktopMock.png';
 import GoodsenseMobileMock from 'assets/goodsenseMobileMock.png';
+import styledComponentsLogo from 'assets/tools/styled-components.png';
 import ReactIcon from 'components/icons/React';
+import IllustratorIcon from 'components/icons/Illustrator';
 import BackButton from 'components/Main/BackButton';
 import CloudAnimation from 'components/Main/CloudAnimation';
 
@@ -30,8 +32,8 @@ class Work extends React.PureComponent { // eslint-disable-line react/prefer-sta
   render() {
     return (
       <Wrapper>
-        <CloudAnimation/>
-        <BackButton onClick={() => this.navigateTo('/')} />
+        <CloudAnimation opacity='0.1'/>
+        <BackButton onClick={() => this.navigateTo('/')}/>
         <ProjectGrid projects={projects} toolsWidth='50px'/>
       </Wrapper>
     );
@@ -56,16 +58,17 @@ const roles = [
 ]
 const tools = [
   {
-    name: 'React',
+    name: 'React.js',
     logo: <ReactIcon/>
   },
   {
-    name: 'PostCSS',
-    logo: <ReactIcon/>
+    name: 'Styled components',
+    logoImage: styledComponentsLogo
   },
   {
-    name: 'React',
-    logo: <ReactIcon/>
+    name: 'Illustrator',
+    padding: '8px',
+    logo: <IllustratorIcon />
   },
 ]
 const projects = [
