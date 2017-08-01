@@ -6,14 +6,16 @@ import SecondCloudSVG from 'components/icons/Cloud/secondCloud.svg';
 import ThirdCloudSVG from 'components/icons/Cloud/thirdCloud.svg';
 import ForthCloudSVG from 'components/icons/Cloud/forthCloud.svg';
 
-const row1Duration = '15s';
-const row2Duration = '20s';
-const row3Duration = '20s';
-const row4Duration = '23s';
+const duration = {
+  row1: '15s',
+  row2: '20s',
+  row3: '20s',
+  row4: '23s',
+}
 
 const transition = keyframes`
-  0% {background-position-x: 0}
-  100% {background-position-x: 200%}
+  0%   { background-position-x: 0 }
+  100% { background-position-x: 200% }
 `
 const Wrapper = styled.div`
   position: fixed;
@@ -42,25 +44,25 @@ const CloudRow1 = styled(Cloud)`
   background: url(${FirstCloudSVG}) repeat-x;
   background-position-y: 90%;
   background-size: 66.6%;
-  animation-duration: ${row1Duration};
+  animation-duration: ${duration.row1};
 `
 const CloudRow2 = styled(Cloud)`
   background: url(${SecondCloudSVG}) repeat-x;
   background-position-y: 45%;
   background-size: 40%;
-  animation-duration: ${row2Duration};
+  animation-duration: ${duration.row2};
 `
 const CloudRow3 = styled(Cloud)`
   background: url(${ThirdCloudSVG}) repeat-x;
   background-position-y: 20%;
   background-size: 28.5%;
-  animation-duration: ${row3Duration};
+  animation-duration: ${duration.row3};
 `
 const CloudRow4 = styled(Cloud)`
   background: url(${ForthCloudSVG}) repeat-x;
   background-position-y: 5%;
   background-size: 20%;
-  animation-duration: ${row4Duration};
+  animation-duration: ${duration.row4};
 `
 
 const CloudAnimation = ({ opacity, ...props }) => (
