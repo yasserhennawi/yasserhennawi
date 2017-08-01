@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   background-position: center;
   background-size: cover;
   background-color: #00bffd;
-  opacity: 0.15;
+  opacity: ${props => props.opacity};
   animation-timing-function: linear;
   ${media.tablet`
     & * {
@@ -63,8 +63,8 @@ const CloudRow4 = styled(Cloud)`
   animation-duration: ${row4Duration};
 `
 
-const CloudAnimation = ({ ...props }) => (
-  <Wrapper>
+const CloudAnimation = ({ opacity, ...props }) => (
+  <Wrapper opacity={opacity}>
     <CloudRow1/>
     <CloudRow2/>
     <CloudRow3/>
