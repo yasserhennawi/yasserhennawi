@@ -7,11 +7,19 @@ import styled from 'utils/styled-components';
 import backgroundImage from 'assets/homeBackground.png';
 import BackButton from 'components/Main/BackButton';
 import CloudAnimation from 'components/Main/CloudAnimation';
+import media from 'utils/media'
 import workpage from 'data/workpage';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+`
+const StyledProjectGrid = styled(ProjectGrid)`
+  padding: 20px calc((100% - 1180px)/2);
+  ${media.giant`
+    padding: 20px;
+  `}
 `
 class Work extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentDidMount(props) {
@@ -28,7 +36,7 @@ class Work extends React.PureComponent { // eslint-disable-line react/prefer-sta
       <Wrapper>
         <CloudAnimation opacity='0.08'/>
         <BackButton onClick={() => this.navigateTo('/')}/>
-        <ProjectGrid projects={workpage.projects} toolsBgColor={workpage.toolsBgColor} toolsWidth={workpage.toolsWidth}/>
+        <StyledProjectGrid projects={workpage.projects} toolsBgColor={workpage.toolsBgColor} toolsWidth={workpage.toolsWidth}/>
       </Wrapper>
     );
   }

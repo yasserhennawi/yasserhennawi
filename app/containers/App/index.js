@@ -7,13 +7,7 @@ import styled from 'utils/styled-components'
 import selectors from './selectors';
 
 const Wrapper = styled.div`
-  ${'' /* & > div {
-    & > * {
-      z-index: 1
-    }
-  } */}
 `;
-const OuterWrapper = styled.div``
 class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
   componentWillReceiveProps(nextProps){

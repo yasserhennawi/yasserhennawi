@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   overflow: hidden;
 `
 const Box = styled.div`
-min-height: 100vh;
+  min-height: 100vh;
   height: 100%;
   width: ${(props)=> props.width}%;
   position: absolute;
