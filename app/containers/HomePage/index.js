@@ -4,6 +4,7 @@ import { requestToLeaveRoute, changeGateState } from '../App/actions'
 import styled from 'utils/styled-components';
 import InfoCard from '../../components/InfoCard'
 import backgroundImage from 'assets/homeBackground.png';
+import myInfo from 'data/homepage';
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -25,15 +26,6 @@ const Wrapper = styled.div`
   }
 }
 `
-const bgColors = [
-  '#212121',
-  '#CCC'
-]
-
-const buttons = [
-  { title: 'Projects', route: '/work'},
-  { title: 'Contact', route: '/contact'},
-]
 
 class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
@@ -52,13 +44,13 @@ class HomePage extends React.PureComponent { // eslint-disable-line react/prefer
     return (
       <Wrapper>
         <InfoCard
-          name='Yasser Hennawi'
-          title='UX/UI Front-End Developer'
-          summary='Providing high-quality and fully responsive front-end solutions, Specialized in React and Redux SPAs.'
-          // avatar={<Avatar/>}
-          image='https://t3.ftcdn.net/jpg/01/04/10/10/240_F_104101070_wbEDt3CmlzqnPbdmOlVCL7Q7yu9mCduz.jpg'
-          avatarSize='150px'
-          buttons={buttons}
+          name={myInfo.name}
+          title={myInfo.title}
+          summary={myInfo.summary}
+          avatar={myInfo.avatar}
+          image={myInfo.image}
+          avatarSize={myInfo.avatarSize}
+          buttons={myInfo.buttons}
         />
       </Wrapper>
     );

@@ -10,16 +10,24 @@ const ToolsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
 `
-const getTools = (tools, width, secondary) =>
+const getTools = (tools, toolsBgColor, width, secondary) =>
   <ToolsWrapper>
     { tools.map( (tool, index) =>
-      <StyledTool key={index} padding={tool.padding} secondary={secondary} width={width} name={tool.name} logoImage={tool.logoImage} logo={tool.logo}/>
+      <StyledTool
+        bgColor={toolsBgColor}
+        key={index}
+        padding={tool.padding}
+        secondary={secondary}
+        width={width}
+        name={tool.name}
+        logoImage={tool.logoImage}
+        logo={tool.logo}/>
     )}
   </ToolsWrapper>
 
-const ToolsSection = ({ secondary, tools, width, ...props }) => (
+const ToolsSection = ({ toolsBgColor, secondary, tools, width, ...props }) => (
   <WorkSection title="Tools">
-    {getTools(tools, width, secondary)}
+    {getTools(tools, toolsBgColor, width, secondary)}
   </WorkSection>
 )
 

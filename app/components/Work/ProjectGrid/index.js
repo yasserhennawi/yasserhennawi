@@ -12,14 +12,16 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `
-const getProjects = (projects, toolsWidth, onHomepageClick) =>
+const getProjects = (projects, toolsBgColor, toolsWidth, onHomepageClick) =>
   projects.map((project, index) =>
     <ProjectGridItem
       key={index}
+      title={project.title}
       secondary={isOdd(index)}
-      paragraphes={project.paragraphes}
+      brief={project.brief}
       roles={project.roles}
       tools={project.tools}
+      toolsBgColor={toolsBgColor}
       width={toolsWidth}
       desktopImage={project.desktopImage}
       mobileImage={project.mobileImage}
@@ -27,9 +29,9 @@ const getProjects = (projects, toolsWidth, onHomepageClick) =>
     </ProjectGridItem>
   )
 
-const ProjectGrid = ({ projects, toolsWidth, onHomepageClick, ...props }) => (
+const ProjectGrid = ({ projects, toolsWidth, toolsBgColor, onHomepageClick, ...props }) => (
   <Wrapper>
-    {getProjects(projects, toolsWidth, onHomepageClick)}
+    {getProjects(projects, toolsBgColor, toolsWidth, onHomepageClick)}
   </Wrapper>
 )
 

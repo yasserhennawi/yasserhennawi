@@ -14,6 +14,9 @@ const Wrapper = styled.div`
   }
   padding: 40px;
 `
+const Title = styled.h3`
+
+`
 const DesktopImage = styled.img`
   width: 100%;
   height: auto;
@@ -54,17 +57,20 @@ const ChildrenWrapper = styled.div`
   width: 100%;
   margin-top: 30px;
 `
-const ProjectGridItem = ({ children, width, paragraphes, roles, tools, secondary, desktopImage, mobileImage, ...props }) => {
+const ProjectGridItem = ({ children, title, toolsBgColor, width, brief, roles, tools, secondary, desktopImage, mobileImage, ...props }) => {
   return (
     <Wrapper secondary={secondary} bgColor={secondary ? '#FFF' : '#212121'}>
-      <BackgroundImageWrapper secondary={true}>
+      <BackgroundImageWrapper secondary >
         <DesktopImage src={desktopImage}/>
         <MobileImage src={mobileImage}/>
       </BackgroundImageWrapper>
       <ContentWrapper secondary>
-        <BriefSection paragraphes={paragraphes}/>
+        <Title>{title}</Title>
+        { brief ?
+          <BriefSection paragraphes={brief}/>
+        : null }
         <RolesSection roles={roles}/>
-        <ToolsSection secondary tools={tools} width={width}/>
+        <ToolsSection toolsBgColor={toolsBgColor} secondary tools={tools} width={width}/>
       </ContentWrapper>
       { children ? <ChildrenWrapper>
         {children}

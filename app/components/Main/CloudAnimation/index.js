@@ -31,6 +31,7 @@ const Wrapper = styled.div`
     & * {
       display: none;
     }
+    opacity: 0;
   `}
 `;
 const Cloud = styled.div`

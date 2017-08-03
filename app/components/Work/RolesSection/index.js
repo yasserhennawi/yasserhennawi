@@ -6,7 +6,7 @@ import Check from '../../icons/Check'
 const Role = styled.h5`
   display: flex;
   margin-bottom: 5px;
-  align-items: center;
+  ${'' /* align-items: center; */}
 `
 const RolesWrapper = styled.div`
   display: flex;
@@ -19,9 +19,10 @@ const CheckIconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 15px;
-  height: 15px;
-  margin-right: 8px;
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  margin: 2px 5px 0 0;
 `
 const getRoles = (roles) =>
   roles.map( (role, index) => (

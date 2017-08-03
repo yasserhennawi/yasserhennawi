@@ -50,7 +50,7 @@ const NameLayer = styled.h5`
   }
 `
 const Tool = ({ bgColor, width, padding, logo, logoImage, name, secondary, ...props }) => (
-  <Wrapper bgColor={bgColor} padding={padding} width={width} { ...props } >
+  <Wrapper bgColor={bgColor} padding={padding ? padding : '3px'} width={width} { ...props } >
     <NameLayer secondary={secondary} width={width}>{name}</NameLayer>
     <LogoLayer logoImage={logoImage} width={width}>{logo}</LogoLayer>
   </Wrapper>
