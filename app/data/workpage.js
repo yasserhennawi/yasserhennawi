@@ -15,8 +15,8 @@ import PostCSS from 'assets/tools/postcss.png';
 import ReactIcon from 'components/icons/React';
 import Electron from 'components/icons/Electron';
 import Css from 'components/icons/Css';
-import Photoshop from 'components/icons/photoshop';
-import Illustrator from 'components/icons/illustrator';
+import Photoshop from 'components/icons/Photoshop';
+import Illustrator from 'components/icons/Illustrator';
 import React from 'react';
 
 
