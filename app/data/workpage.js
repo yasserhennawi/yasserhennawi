@@ -26,6 +26,9 @@ export default {
   projects: [
     {
       title: 'Goodsense',
+      brief: [
+        "Goodsense is an ecommerce platform that's centered around niche marketing. I started working on this project as a Front End Designer/Developer at jun. 2016",
+      ],
       roles: [
         'Redesigning the web application from scratch according to Google material design guidelines.',
         'Coding the photoshop mocks I made into re-usable React components with styled-components.',
