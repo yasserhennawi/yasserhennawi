@@ -5,6 +5,7 @@ import FirstCloudSVG from 'components/icons/Cloud/firstCloud.svg';
 import SecondCloudSVG from 'components/icons/Cloud/secondCloud.svg';
 import ThirdCloudSVG from 'components/icons/Cloud/thirdCloud.svg';
 import ForthCloudSVG from 'components/icons/Cloud/forthCloud.svg';
+import colors from 'theme/color';
 
 const duration = {
   row1: '15s',
@@ -24,7 +25,7 @@ const Wrapper = styled.div`
   z-index: -1;
   background-position: center;
   background-size: cover;
-  background-color: #00bffd;
+  background-color: ${colors.skyblue};
   opacity: ${props => props.opacity};
   animation-timing-function: linear;
   ${media.tablet`

@@ -7,6 +7,7 @@ import backgroundImage from 'assets/contactBackground.png';
 import contactPage from 'data/contactpage';
 import ContactCard from 'components/ContactCard'
 import BackButton from 'components/Main/BackButton'
+import colors from 'theme/color';
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -14,7 +15,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background-color: rgba(0,0,0,0.85);
+  background-color: ${colors.shadow1};
   &:after {
     content: "";
     background: url(${backgroundImage}) no-repeat 15%/cover;
@@ -25,7 +26,7 @@ const Wrapper = styled.div`
     position: absolute;
     z-index: -1;
   }
-  & * { color: #FFF }
+  & * { color: ${colors.white} }
 `
 
 class Contact extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function

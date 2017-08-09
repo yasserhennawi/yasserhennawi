@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'utils/styled-components';
 import ChevronLeft from 'components/icons/ChevronLeft';
+import colors from 'theme/color';
 
 const BackChevron = styled.div`
   position: absolute;
@@ -8,7 +9,7 @@ const BackChevron = styled.div`
   width: 80px;
   height: 80px;
   border-bottom-right-radius: 100%;
-  background-color: ${props => props.secondary ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.8)'};
+  background-color: ${props => props.secondary ? colors.grey1 : colors.shadow1};
   opacity: 0.5
   transition: all 0.5s ease;
   z-index: 1;
@@ -27,7 +28,7 @@ const Icon = styled.div`
   width: 50%;
   height: 90%;
   & > svg {
-    fill: ${props => props.secondary ? '#000' : '#FFF'};
+    fill: ${ props => props.secondary ? colors.shadow1 : colors.grey1 };
   }
 `
 

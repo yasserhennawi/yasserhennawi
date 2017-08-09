@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'utils/styled-components';
 import media from 'utils/media';
+import colors from 'theme/color';
 
 const Wrapper = styled.div`
   display: flex;
@@ -25,7 +26,7 @@ const Wrapper = styled.div`
     }
   `};
   & > * {
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 2px  ${colors.shadow3};
   }
 `
 const LogoWrapper = styled.div`

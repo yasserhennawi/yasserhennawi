@@ -5,6 +5,7 @@ import CircularImage from 'components/Utils/CircularImage';
 import Button from 'components/Utils/Button';
 import { connect } from 'react-redux';
 import { requestToLeaveRoute, changeGateState } from '../../containers/App/actions'
+import colors from 'theme/color'
 
 const gradientColor = `rgba(33,33,33,1), rgba(33,33,33,0.8), rgba(33,33,33,0.5), rgba(33,33,33,0)`
 const secondaryGradientColor = `farthest-side, rgba(255,255,255,1), rgba(255,255,255,0.8), rgba(255,255,255,0.6), rgba(255,255,255,0.3)`
@@ -23,13 +24,13 @@ const Wrapper = styled.div`
   box-shadow: 0px 0px 20px rgba(255,255,255,0.3);
 `
 const Name = styled.h2`
-  color: rgba(0,0,0,0.75);
+  color: ${colors.shadow2};
 `
 const Title = styled.h3`
-  color: rgba(0,0,0,0.54);
+  color: ${colors.shadow3};
 `
 const Summary = styled.h4`
-  color: rgba(0,0,0,0.75);
+  color: ${colors.shadow2};
 `
 const ButtonsContainer = styled.div`
   display: flex;

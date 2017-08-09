@@ -1,4 +1,5 @@
 import { injectGlobal } from 'styled-components';
+import colors from 'theme/color';
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal`
@@ -13,7 +14,7 @@ injectGlobal`
     margin: 0px;
     font-weight: normal;
     font-family: 'Roboto';
-    color: rgba(0,0,0,0.87);
+    color: ${colors.shadow1};
     line-height: 1.5;
   }
   h1 {

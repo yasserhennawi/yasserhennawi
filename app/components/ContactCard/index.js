@@ -3,6 +3,7 @@ import styled from 'utils/styled-components';
 import backgroundImage from 'assets/contactBackground.png';
 import Button from 'components/Utils/Button';
 import ContactItem from '../ContactItem';
+import colors from 'theme/color'
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,7 +20,7 @@ const StyledButton = styled(Button)`
 `
 const Title = styled.h1`
   font-weight: 600;
-  text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 2px ${colors.shadow3};
   margin-bottom: 20px;
 `
 const ContactItemWrapper = styled.div `

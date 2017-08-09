@@ -5,6 +5,7 @@ import { FormattedMessage } from 'react-intl';
 import { routeIsReady } from '../../containers/App/actions';
 import selector from './selectors';
 import { connect } from 'react-redux';
+import colors from 'theme/color';
 
 const Wrapper = styled.div`
   display: flex;
@@ -34,11 +35,6 @@ const ContentWrapper = styled.div`
   width: 100%;
   overflow-x: hidden;
 `
-const colors = [
-  '#212121',
-  '#212121',
-  '#147',
-]
 
 class GateAnimation extends React.Component {
 
@@ -53,14 +49,14 @@ class GateAnimation extends React.Component {
     return (
       <StaggeredMotion
         defaultStyles={[
-          { width: 50, },
-          { width: 50, },
-          { width: 0 , },
+          { width: 50 },
+          { width: 50 },
+          { width: 0  },
         ]}
         styles={ prevStyles => { return [
-          { width: spring( gateStatus ? (prevStyles[0].width > 1 ? prevStyles[0].width * 0.5 : 0 )  : (prevStyles[0].width < 47 ? prevStyles[0].width + 2  * 5 : 50)) },
-          { width: spring( gateStatus ? (prevStyles[1].width > 1 ? prevStyles[1].width * 0.5 : 0 )  : (prevStyles[1].width < 47 ? prevStyles[1].width + 2  * 5 : 50)) },
-          { width: spring( 100 - prevStyles[1].width) },
+          { width: spring(gateStatus ? (prevStyles[0].width > 1 ? prevStyles[0].width * 0.5 : 0 )  : (prevStyles[0].width < 47 ? prevStyles[0].width + 2  * 5 : 50)) },
+          { width: spring(gateStatus ? (prevStyles[1].width > 1 ? prevStyles[1].width * 0.5 : 0 )  : (prevStyles[1].width < 47 ? prevStyles[1].width + 2  * 5 : 50)) },
+          { width: spring(100 - prevStyles[1].width) },
         ]}}
       >
         { styles => {
@@ -71,9 +67,9 @@ class GateAnimation extends React.Component {
           }
           return (
             <Wrapper>
-              <Box bgColor={colors[0]} width={styles[0].width}/>
-              <Box bgColor={colors[1]} width={styles[1].width}/>
-              <ContentWrapper bgColor={colors[2]} opacity={styles[2].opacity}>
+              <Box bgColor={colors.black1} width={styles[0].width}/>
+              <Box bgColor={colors.black1} width={styles[1].width}/>
+              <ContentWrapper>
                 {children}
               </ContentWrapper>
             </Wrapper>

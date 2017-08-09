@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'utils/styled-components';
+import colors from 'theme/color';
 
 const gradientColor = `rgba(33,33,33,1), rgba(33,33,33,0.8), rgba(33,33,33,0.5), rgba(33,33,33,0)`
 const secondaryGradientColor = `rgba(255,255,255,1), rgba(255,255,255,0.4), rgba(255,255,255,0), rgba(255,255,255,0)`
@@ -35,13 +36,13 @@ const NameLayer = styled.h5`
   width: ${ props => props.width};
   height: ${ props => props.width};
   box-sizing: border-box;
-  color: rgba(0,0,0,0.75);
+  color: ${colors.shadow2};
   font-weight: 500;
   background: -webkit-radial-gradient( ${props => props.secondary ? secondaryGradientColor : gradientColor} );
   background: -o-radial-gradient( ${props => props.secondary ? secondaryGradientColor : gradientColor} );
   background: -moz-radial-gradient( ${props => props.secondary ? secondaryGradientColor : gradientColor} );
   background: radial-gradient( ${props => props.secondary ? secondaryGradientColor : gradientColor} );
-  text-shadow: -2px -2px 4px #fff, 2px 2px 4px #fff;
+  text-shadow: -2px -2px 4px ${colors.white}, 2px 2px 4px ${colors.white};
   border-radius: 100%;
   transition: all 0.5s ease;
   opacity: 0;

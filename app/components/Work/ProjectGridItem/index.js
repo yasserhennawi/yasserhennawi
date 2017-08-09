@@ -3,6 +3,7 @@ import styled from 'utils/styled-components';
 import BriefSection from '../BriefSection';
 import RolesSection from '../RolesSection';
 import ToolsSection from '../ToolsSection';
+import colors from 'theme/color';
 
 const Wrapper = styled.div`
   display: flex;
@@ -35,12 +36,12 @@ const BackgroundImageWrapper = styled.div`
     margin-bottom: 20px;
   };
   & > *{
-    filter: drop-shadow(-3px 3px 3px rgba(0,0,0,0.5))
+    filter: drop-shadow(-3px 3px 3px ${colors.shadow2})
   }
 `
 const ContentWrapper = styled.div`
   & * {
-    color: ${ props => props.secondary ? '#212121' : '#FFF' }
+    color: ${ props => props.secondary ? colors.black1 : colors.white }
   }
   width: calc(50% - 20px);
   display: flex;
@@ -60,10 +61,10 @@ const ChildrenWrapper = styled.div`
 `
 const ProjectGridItem = ({ children, title, toolsBgColor, width, brief, roles, tools, secondary, desktopImage, mobileImage, ...props }) => {
   return (
-    <Wrapper secondary={secondary} bgColor={secondary ? '#FFF' : '#212121'}>
+    <Wrapper secondary={ secondary } bgColor={ secondary ? colors.white : colors.black1 }>
       <BackgroundImageWrapper secondary >
-        <DesktopImage src={desktopImage}/>
-        <MobileImage src={mobileImage}/>
+        <DesktopImage src={ desktopImage }/>
+        <MobileImage src={ mobileImage }/>
       </BackgroundImageWrapper>
       <ContentWrapper secondary>
         <Title>{title}</Title>
