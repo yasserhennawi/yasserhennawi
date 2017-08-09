@@ -20,6 +20,12 @@ const StyledProjectGrid = styled(ProjectGrid)`
   ${media.giant`
     padding: 20px;
   `}
+  ${media.tablet`
+    padding: 10px;
+  `}
+  ${media.phone`
+    padding: 0;
+  `}
 `
 class Work extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentDidMount(props) {

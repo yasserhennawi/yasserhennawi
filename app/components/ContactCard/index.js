@@ -26,6 +26,7 @@ const ContactItemWrapper = styled.div `
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+  padding-left: 20px;
   width: 100%;
 `
 
