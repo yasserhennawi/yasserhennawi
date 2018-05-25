@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'utils/styled-components';
 import colors from 'theme/color';
 
-const Button = styled.button`
+const StyledButton = styled.button`
   cursor: pointer;
   color: ${(props) => props.color};
   border: 1px solid ${(props) => props.color};
@@ -15,15 +16,26 @@ const Button = styled.button`
   outline: none;
 `;
 
-const PrimaryButton = styled(Button)`
-`;
+const Button = ({ secondary, activeColor, ...props }) =>
+  secondary ? (
+    <StyledButton
+      color={colors.shadow2}
+      inverseColor={colors.white}
+      activeColor={activeColor}
+      {...props}
+    />
+  ) : (
+    <StyledButton
+      color={colors.white}
+      inverseColor={colors.shadow2}
+      activeColor={activeColor}
+      {...props}
+    />
+  );
 
-const SecondaryButton = styled(Button)`
-`;
+Button.propTypes = {
+  secondary: PropTypes.bool,
+  activeColor: PropTypes.string,
+};
 
-export default ({ secondary, activeColor, ...props }) => {
-  if(secondary) {
-    return <SecondaryButton color={colors.shadow2} inverseColor={colors.white} activeColor={activeColor} {...props} />
-  }
-  return <PrimaryButton color={colors.white} inverseColor={colors.shadow2} activeColor={activeColor} {...props} />
-}
+export default Button;

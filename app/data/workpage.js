@@ -19,7 +19,6 @@ import Photoshop from 'components/icons/Photoshop';
 import Illustrator from 'components/icons/Illustrator';
 import React from 'react';
 
-
 export default {
   toolsWidth: '50px',
   toolsBgColor: 'rgba(255,255,255,0.5)',
@@ -32,26 +31,26 @@ export default {
       roles: [
         'Redesigning the web application from scratch according to Google material design guidelines.',
         'Coding the photoshop mocks I made into re-usable React components with styled-components.',
-        'Drawing SVG icons in a UX manner.'
+        'Drawing SVG icons in a UX manner.',
       ],
       tools: [
         {
           name: 'React.js',
-          logo: <ReactIcon/>
+          logo: <ReactIcon />,
         },
         {
           name: 'Styled components',
-          logoImage: styledComponents
+          logoImage: styledComponents,
         },
         {
           name: 'Photoshop',
           padding: '8px',
-          logo: <Photoshop/>,
+          logo: <Photoshop />,
         },
         {
           name: 'Illustrator',
           padding: '8px',
-          logo: <Illustrator/>,
+          logo: <Illustrator />,
         },
       ],
       desktopImage: GoodsenseDesktopMock,
@@ -67,24 +66,24 @@ export default {
       tools: [
         {
           name: 'React.js',
-          logo: <ReactIcon/>
+          logo: <ReactIcon />,
         },
         {
           name: 'Electron',
           padding: '8px',
-          logo: <Electron/>
+          logo: <Electron />,
         },
         {
           name: 'Redux',
-          logoImage: redux
+          logoImage: redux,
         },
         {
           name: 'Redux saga',
-          logoImage: reduxSaga
+          logoImage: reduxSaga,
         },
         {
           name: 'Styled components',
-          logoImage: styledComponents
+          logoImage: styledComponents,
         },
       ],
       desktopImage: GoCrushDesktopMock,
@@ -100,16 +99,16 @@ export default {
       tools: [
         {
           name: 'PrimeFaces',
-          logoImage: PrimeFaces
+          logoImage: PrimeFaces,
         },
         {
           name: 'HTML',
-          logoImage: Html
+          logoImage: Html,
         },
         {
           name: 'CSS',
           padding: '5px',
-          logo: <Css />
+          logo: <Css />,
         },
       ],
       desktopImage: AlahmadyDesktopMock,
@@ -119,20 +118,20 @@ export default {
       title: 'CyTIX Inc.',
       roles: [
         'Coding the web application from scratch into re-usable React components styled with PostCSS',
-        'Creating interactive animations using ReactMotion.'
+        'Creating interactive animations using ReactMotion.',
       ],
       tools: [
         {
           name: 'React.js',
-          logo: <ReactIcon/>
+          logo: <ReactIcon />,
         },
         {
           name: 'PostCSS',
-          logoImage: PostCSS
+          logoImage: PostCSS,
         },
       ],
       desktopImage: CytixDesktopMock,
       mobileImage: CytixMobileMock,
     },
-  ]
-}
+  ],
+};

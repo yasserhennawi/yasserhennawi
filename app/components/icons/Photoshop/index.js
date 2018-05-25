@@ -1,18 +1,29 @@
 import React from 'react';
-import styled from 'utils/styled-components'
+import PropTypes from 'prop-types';
 
 export default function Photoshop({ onClick, fill, ...props }) {
   return (
-      <svg
-        { ...props }
-        fill={fill}
-        onClick={onClick}
-        width="100%"
-        viewBox="0 0 240 234"
-      >
-        <rect x="10" y="10" style={{fillRule:'evenodd',clipRule:'evenodd',fill:'#001D26',}} width="220" height="214"/>
-        <path style={{fillRule:'evenodd',clipRule:'evenodd',fill:'#00C8FF'}} d="M0,0V234h240.001V0H0z M10,10h220.001V224H10V10z"/>
-        <path style={{fillRule:'evenodd',clipRule:'evenodd',fill:'#00C8FF'}} d="M58,54.789c0-0.66,1.415-1.154,2.24-1.154
+    <svg
+      {...props}
+      fill={fill}
+      onClick={onClick}
+      width="100%"
+      viewBox="0 0 240 234"
+    >
+      <rect
+        x="10"
+        y="10"
+        style={{ fillRule: 'evenodd', clipRule: 'evenodd', fill: '#001D26' }}
+        width="220"
+        height="214"
+      />
+      <path
+        style={{ fillRule: 'evenodd', clipRule: 'evenodd', fill: '#00C8FF' }}
+        d="M0,0V234h240.001V0H0z M10,10h220.001V224H10V10z"
+      />
+      <path
+        style={{ fillRule: 'evenodd', clipRule: 'evenodd', fill: '#00C8FF' }}
+        d="M58,54.789c0-0.66,1.415-1.154,2.24-1.154
           c6.435-0.33,15.882-0.495,25.782-0.495c27.72,0,38.515,15.181,38.515,34.649c0,25.41-18.428,36.301-41.033,36.301
           c-3.795,0-5.115-0.166-7.755-0.166v38.42c0,0.826-0.33,1.156-1.155,1.156H59.155c-0.825,0-1.155-0.33-1.155-1.156V54.789z
           M75.75,107.92c2.31,0.164,4.125,0.164,8.085,0.164c11.715,0,22.718-4.125,22.718-19.965c0-12.705-7.868-19.14-21.233-19.14
@@ -21,7 +32,13 @@ export default function Photoshop({ onClick, fill, ...props }) {
           c-0.66-0.33-0.825-0.824-0.825-1.65v-14.684c0-0.99,0.495-1.32,1.155-0.826c6.27,4.125,13.547,5.941,20.147,5.941
           c7.92,0,11.22-3.301,11.22-7.756c0-3.631-2.31-6.766-12.375-12.045c-14.19-6.766-20.13-13.696-20.13-25.245
           c0-12.871,10.065-23.596,27.555-23.596c8.58,0,14.638,1.32,17.938,2.805c0.825,0.496,0.99,1.32,0.99,1.98V99.34
-        c0,0.824-0.495,1.32-1.485,0.99C174.81,97.69,168.258,96.039,161.822,96.039z"/>
-      </svg>
+        c0,0.824-0.495,1.32-1.485,0.99C174.81,97.69,168.258,96.039,161.822,96.039z"
+      />
+    </svg>
   );
 }
+
+Photoshop.propTypes = {
+  fill: PropTypes.string,
+  onClick: PropTypes.func,
+};

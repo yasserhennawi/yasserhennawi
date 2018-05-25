@@ -21,7 +21,7 @@ export default () => createSelector(
   selectRouteToLoad(),
   selectIsRouteReady(),
   selectGateIsOpen(),
-  (routeToLoad, isRouteReady, gateStatus ) => ({
+  (routeToLoad, isRouteReady, gateStatus) => ({
     routeToLoad,
     isRouteReady,
     gateStatus,

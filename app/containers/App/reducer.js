@@ -1,20 +1,16 @@
-import {
-  LEAVE_ROUTE,
-  ROUTE_READY,
-  CHANGE_GATE_STATE,
-} from './constants';
 import { fromJS } from 'immutable';
+import { LEAVE_ROUTE, ROUTE_READY, CHANGE_GATE_STATE } from './constants';
 
 const initialState = fromJS({
   requestedRoute: {
     route: null,
     isRouteReady: false,
   },
-  gateStatus:  false
+  gateStatus: false,
 });
 
 export default (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case LEAVE_ROUTE:
       return state.mergeIn(['requestedRoute'], {
         route: action.route,
@@ -28,7 +24,7 @@ export default (state = initialState, action) => {
 
     case CHANGE_GATE_STATE:
       return state.mergeIn(['gateStatus'], !state.get('gateStatus'));
-
+    default:
+      return state;
   }
-  return state;
-}
+};

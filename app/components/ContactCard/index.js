@@ -1,9 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'utils/styled-components';
-import backgroundImage from 'assets/contactBackground.png';
-import Button from 'components/Utils/Button';
+import colors from 'theme/color';
 import ContactItem from '../ContactItem';
-import colors from 'theme/color'
 
 const Wrapper = styled.div`
   display: flex;
@@ -13,44 +12,40 @@ const Wrapper = styled.div`
   max-height: 100vh;
   overflow: hidden;
   padding: 20px;
-`
-const StyledButton = styled(Button)`
-  padding: 10px 10px;
-  font-size: 14px;
-`
+`;
 const Title = styled.h1`
   font-weight: 600;
   text-shadow: 2px 2px 2px ${colors.shadow3};
   margin-bottom: 20px;
-`
-const ContactItemWrapper = styled.div `
+`;
+const ContactItemWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
   padding-left: 20px;
   width: 100%;
-`
+`;
 
-const getContactItems = (items) => (
-  <ContactItemWrapper>
-    {items.map((item, index) => (
-      <ContactItem
-        key={index}
-        url={item.url}
-        logo={item.logo}
-        bgColor={item.bgColor}
-        isClickable={item.isClickable}
-      />
-    ))}
-  </ContactItemWrapper>
-)
-const ContactCard = ({ onHomepageClick, contactItems, ...props }) => (
-    <Wrapper>
-      <Title>
-        Get in touch!
-      </Title>
-      { contactItems ? getContactItems(contactItems) : null }
-    </Wrapper>
-)
+const getContactItems = (items) =>
+  items.map((item, index) => (
+    <ContactItem
+      key={index}
+      url={item.url}
+      logo={item.logo}
+      bgColor={item.bgColor}
+      isClickable={item.isClickable}
+    />
+  ));
+
+const ContactCard = ({ contactItems }) => (
+  <Wrapper>
+    <Title>Get in touch!</Title>
+    <ContactItemWrapper>{getContactItems(contactItems)}</ContactItemWrapper>
+  </Wrapper>
+);
+
+ContactCard.propTypes = {
+  contactItems: PropTypes.array.isRequired,
+};
 
 export default ContactCard;

@@ -1,0 +1,5 @@
+{
+  "prettier.arrowParens": "always",
+  "prettier.trailingComma": "es5",
+  "prettier.singleQuote": true
+}

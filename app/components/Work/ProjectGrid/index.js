@@ -1,18 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'utils/styled-components';
 import ProjectGridItem from 'components/Work/ProjectGridItem';
 import { isOdd } from 'utils/helper';
-import Button from 'components/Utils/Button';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-`
+`;
 
-const getProjects = (projects, toolsBgColor, toolsWidth, onHomepageClick) =>
-  projects.map((project, index) =>
+const getProjects = (projects, toolsBgColor, toolsWidth) =>
+  projects.map((project, index) => (
     <ProjectGridItem
       key={index}
       title={project.title}
@@ -24,14 +24,26 @@ const getProjects = (projects, toolsBgColor, toolsWidth, onHomepageClick) =>
       width={toolsWidth}
       desktopImage={project.desktopImage}
       mobileImage={project.mobileImage}
-    >
-    </ProjectGridItem>
-  )
+    />
+  ));
 
-const ProjectGrid = ({ projects, toolsWidth, toolsBgColor, onHomepageClick, ...props }) => (
+const ProjectGrid = ({
+  projects,
+  toolsWidth,
+  toolsBgColor,
+  onHomepageClick,
+  ...props
+}) => (
   <Wrapper {...props}>
     {getProjects(projects, toolsBgColor, toolsWidth, onHomepageClick)}
   </Wrapper>
-)
+);
+
+ProjectGrid.propTypes = {
+  projects: PropTypes.array,
+  toolsWidth: PropTypes.string,
+  toolsBgColor: PropTypes.string,
+  onHomepageClick: PropTypes.func,
+};
 
 export default ProjectGrid;

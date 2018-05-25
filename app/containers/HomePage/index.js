@@ -1,10 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import { requestToLeaveRoute, changeGateState } from '../App/actions'
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import styled from 'utils/styled-components';
-import InfoCard from '../../components/InfoCard'
 import backgroundImage from 'assets/homeBackground.png';
 import myInfo from 'data/homepage';
+import { requestToLeaveRoute, changeGateState } from '../App/actions';
+import InfoCard from '../../components/InfoCard';
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -25,19 +26,15 @@ const Wrapper = styled.div`
     z-index: -1;
   }
 }
-`
+`;
 
-class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+class HomePage extends React.PureComponent {
+  // eslint-disable-line react/prefer-stateless-function
 
-  componentWillMount(props) {
-    setTimeout(()=>{
+  componentWillMount() {
+    setTimeout(() => {
       this.props.changeGateState();
-    }, 500)
-  }
-
-  navigateTo(route) {
-    this.props.changeGateState();
-    this.props.requestToLeaveRoute(route);
+    }, 500);
   }
 
   render() {
@@ -57,9 +54,13 @@ class HomePage extends React.PureComponent { // eslint-disable-line react/prefer
   }
 }
 
+HomePage.propTypes = {
+  changeGateState: PropTypes.func,
+};
+
 const mapDispatchToProps = {
   requestToLeaveRoute,
-  changeGateState
-}
+  changeGateState,
+};
 
-export default connect(null, mapDispatchToProps)(HomePage)
+export default connect(null, mapDispatchToProps)(HomePage);

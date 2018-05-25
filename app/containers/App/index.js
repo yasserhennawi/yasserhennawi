@@ -1,36 +1,38 @@
-import GateAnimation from '../../components/GateAnimation'
 import React from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
-import styled from 'utils/styled-components'
+import GateAnimation from '../../components/GateAnimation';
 import selectors from './selectors';
 
-const Wrapper = styled.div`
-`;
-class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+class App extends React.PureComponent {
+  // eslint-disable-line react/prefer-stateless-function
 
-  componentWillReceiveProps(nextProps){
-    if(nextProps.routeToLoad
-      && nextProps.routeToLoad !== nextProps.location.pathname
-      && nextProps.isRouteReady)
-      this.props.push(nextProps.routeToLoad)
+  componentWillReceiveProps(nextProps) {
+    if (
+      nextProps.routeToLoad &&
+      nextProps.routeToLoad !== nextProps.location.pathname &&
+      nextProps.isRouteReady
+    ) {
+      this.props.push(nextProps.routeToLoad);
+    }
   }
-
-  static propTypes = {
-    children: React.PropTypes.node,
-  };
 
   render() {
     return (
-        <Wrapper>
-          <GateAnimation>
-            {React.Children.toArray(this.props.children)}
-          </GateAnimation>
-        </Wrapper>
+      <div>
+        <GateAnimation>
+          {React.Children.toArray(this.props.children)}
+        </GateAnimation>
+      </div>
     );
   }
 }
+
+App.propTypes = {
+  children: PropTypes.node,
+  push: PropTypes.func,
+};
 
 const mapStateToProps = selectors();
 

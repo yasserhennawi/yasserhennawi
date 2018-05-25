@@ -10,8 +10,8 @@ import {
   black,
 } from 'material-ui/styles/colors';
 export default {
-  black: black,
-  white: white,
+  black,
+  white,
 
   skyblue: blue700,
 
